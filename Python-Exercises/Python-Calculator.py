@@ -91,7 +91,7 @@ if user_input in [1, 2, 3, 4]:
 
             # LOGIC TO DETERMINE IF THE ANSWER IS CORRECT
             if division_user_answer == division_correct_answer:
-                print(f"{division_first_num} // {division_second_num} = {division_user_answer}")
+                print(f"{division_first_num} / {division_second_num} = {division_user_answer}")
                 print("Correct!")
                 correct_answers += 1
             else:
