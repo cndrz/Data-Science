@@ -1,3 +1,5 @@
+import random 
+
 # VARIABLE TO KEEP TRACK OF CORRECT ANSWERS
 correct_answers = 0
 
