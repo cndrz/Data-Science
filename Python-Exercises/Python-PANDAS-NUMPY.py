@@ -1,7 +1,11 @@
 import pandas as pd
 import numpy as np
 
-data_frame = pd.DataFrame({"X":[10, 20, 30, 40, 50], "Y":[2, 4, 6, 8, 10], "Z":[1, 2, 3, 4, 5]})
+data_frame = pd.DataFrame({"A":[10, 20, 30, 40, 50], "B":[2, 4, 6, 8, 10], "C":[1, 2, 3, 4, 5]}, index = [1, 2, 3, 4, 5])
+
+print("sample of a data frame")
+print(data_frame) # prints the data frame variable above.
+print()
 
 print("first n rows of the data frame")
 data_frame_first_rows = data_frame.head(2) # first n rows of the data frame.
