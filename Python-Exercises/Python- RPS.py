@@ -1,86 +1,110 @@
-# Make functions for AI choice.
-# Point increment for player and bot.
-# Lives decrement for player and bot.
-# 1 = Rock, 2 = Paper, 3 = Scissors
-
 import random
 
-def Player():
+ROCK, PAPER, SCISSORS = 1, 2, 3
+
+def get_player_choice():
     while True:
-        player = int(input("Enter choice: "))
-        if player in [1, 2, 3]:
-            print(f"Player -> {'Rock' if player == 1 else 'Paper' if player == 2 else 'Scissors'}")
+        player = int(input("Enter choice (1: Rock, 2: Paper, 3: Scissors): "))
+        if player in [ROCK, PAPER, SCISSORS]:
+            print(f"Player -> {'Rock' if player == ROCK else 'Paper' if player == PAPER else 'Scissors'}")
             return player
         else:
             print("Invalid Input. Try Again")
 
-def AI():
+def get_ai_choice():
     bot = random.randint(1, 3)
-    print(f"Bot -> {'Rock' if bot == 1 else 'Paper' if bot == 2 else 'Scissors'}")
+    print(f"Bot -> {'Rock' if bot == ROCK else 'Paper' if bot == PAPER else 'Scissors'}")
     return bot
 
-def PS_LS(player, bot):
-    pp = 0
-    bp = 0
+def play_game(player, bot):
+    player_points = 0
+    bot_points = 0
 
-    pl = 5  # Player life
-    bl = 5  # Bot life
+    player_life = 5
+    bot_life = 5
 
-    while pl > 0 and bl > 0:
+    while player_life > 0 and bot_life > 0:
         if player == bot:
             print("Tie")
-            pp += 5
-            bp += 5
-        elif player == 1 and bot == 2:
-            bp += 10
-            pl -= 1
-        elif player == 1 and bot == 3:
-            pp += 10
-            bl -= 1
-        elif player == 2 and bot == 1:
-            pp += 10
-            bl -= 1
-        elif player == 2 and bot == 3:
-            bp += 10
-            pl -= 1
-        elif player == 3 and bot == 1:
-            bp += 10
-            pl -= 1
-        elif player == 3 and bot == 2:
-            pp += 10
-            bl -= 1
-    
-        print(f"Player Points -> {pp} | Player Life -> {pl}")
-        print(f"Bot Points -> {bp} | Bot Life -> {bl}")
+            player_points += 5
+            bot_points += 5
+        elif (player == ROCK and bot == PAPER) or (player == PAPER and bot == SCISSORS) or (player == SCISSORS and bot == ROCK):
+            bot_points += 10
+            player_life -= 1
+        else:
+            player_points += 10
+            bot_life -= 1
 
-        if pl == 0:
+        print(f"Player Points -> {player_points} | Player Life -> {player_life}")
+        print(f"Bot Points -> {bot_points} | Bot Life -> {bot_life}")
+
+        if player_life == 0:
             print("Bot Win. Game Over.")
             break
-        elif bl == 0:
+        elif bot_life == 0:
             print("Player Win. Game Over.")
             break
 
         # Get choices from Player and AI for the next round
-        player = Player()
-        bot = AI()
+        player = get_player_choice()
+        bot = get_ai_choice()
 
 # Start the game
-player_choice = Player()
-bot_choice = AI()
-PS_LS(player_choice, bot_choice)
+player_choice = get_player_choice()
+bot_choice = get_ai_choice()
+play_game(player_choice, bot_choice)
+import random
 
+ROCK, PAPER, SCISSORS = 1, 2, 3
 
+def get_player_choice():
+    while True:
+        player = int(input("Enter choice (1: Rock, 2: Paper, 3: Scissors): "))
+        if player in [ROCK, PAPER, SCISSORS]:
+            print(f"Player -> {'Rock' if player == ROCK else 'Paper' if player == PAPER else 'Scissors'}")
+            return player
+        else:
+            print("Invalid Input. Try Again")
 
+def get_ai_choice():
+    bot = random.randint(1, 3)
+    print(f"Bot -> {'Rock' if bot == ROCK else 'Paper' if bot == PAPER else 'Scissors'}")
+    return bot
 
+def play_game(player, bot):
+    player_points = 0
+    bot_points = 0
 
+    player_life = 5
+    bot_life = 5
 
+    while player_life > 0 and bot_life > 0:
+        if player == bot:
+            print("Tie")
+            player_points += 5
+            bot_points += 5
+        elif (player == ROCK and bot == PAPER) or (player == PAPER and bot == SCISSORS) or (player == SCISSORS and bot == ROCK):
+            bot_points += 10
+            player_life -= 1
+        else:
+            player_points += 10
+            bot_life -= 1
 
+        print(f"Player Points -> {player_points} | Player Life -> {player_life}")
+        print(f"Bot Points -> {bot_points} | Bot Life -> {bot_life}")
 
+        if player_life == 0:
+            print("Bot Win. Game Over.")
+            break
+        elif bot_life == 0:
+            print("Player Win. Game Over.")
+            break
 
+        # Get choices from Player and AI for the next round
+        player = get_player_choice()
+        bot = get_ai_choice()
 
-
-
-
-
-
-
+# Start the game
+player_choice = get_player_choice()
+bot_choice = get_ai_choice()
+play_game(player_choice, bot_choice)
