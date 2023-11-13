@@ -6,8 +6,8 @@ import random
 pygame.init()
 
 # Set up game constants
-GRID_SIZE = 20
-CELL_SIZE = 30
+GRID_SIZE = 30
+CELL_SIZE = 20
 WIDTH, HEIGHT = GRID_SIZE * CELL_SIZE, GRID_SIZE * CELL_SIZE
 
 # Define colors
