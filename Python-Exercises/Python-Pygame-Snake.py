@@ -30,13 +30,24 @@ class Snake:
 
     def check_collision(self):
         head = self.body[0]
-        # Check for collisions with walls or itself
-        if (
-            head[0] < 0 or head[0] >= GRID_SIZE or
-            head[1] < 0 or head[1] >= GRID_SIZE or
-            head in self.body[1:]
-        ):
+
+        # Wrap around to the opposite side if out of bounds
+        if head[0] < 0:
+            head = (GRID_SIZE - 1, head[1])
+        elif head[0] >= GRID_SIZE:
+            head = (0, head[1])
+        elif head[1] < 0:
+            head = (head[0], GRID_SIZE - 1)
+        elif head[1] >= GRID_SIZE:
+            head = (head[0], 0)
+
+        # Check for collisions with itself
+        if head in self.body[1:]:
             return True
+
+        # Update the head position
+        self.body[0] = head
+
         return False
 
 # Define the Food class
@@ -62,18 +73,19 @@ food = Food()
 # Main game loop
 running = True
 clock = pygame.time.Clock()
+
 while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
         elif event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_UP:
+            if event.key == pygame.K_w and snake.direction != (0, 1):  # "W" key for up
                 snake.direction = (0, -1)  # Move up
-            elif event.key == pygame.K_DOWN:
+            elif event.key == pygame.K_s and snake.direction != (0, -1):  # "S" key for down
                 snake.direction = (0, 1)  # Move down
-            elif event.key == pygame.K_LEFT:
+            elif event.key == pygame.K_a and snake.direction != (1, 0):  # "A" key for left
                 snake.direction = (-1, 0)  # Move left
-            elif event.key == pygame.K_RIGHT:
+            elif event.key == pygame.K_d and snake.direction != (-1, 0):  # "D" key for right
                 snake.direction = (1, 0)  # Move right
 
     # Update the game state
