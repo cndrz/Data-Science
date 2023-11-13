@@ -10,7 +10,7 @@ print()
 print("first n rows of the data frame")
 data_frame_first_rows = data_frame.head(2) # first n rows of the data frame.
 print(data_frame_first_rows) # prints the first rows specified.
-print()
+print() 
 
 print("last n rows of the data frame")
 data_frame_last_rows = data_frame.tail(3) # last n rows of the data frame.
