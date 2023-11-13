@@ -49,8 +49,8 @@ def play_game(player, bot):
         player = get_player_choice()
         bot = get_ai_choice()
 
-# Start the game
 
+# Start the game
 print("1 Rock, 2 Paper, 3 Scissors")
 player_choice = get_player_choice()
 bot_choice = get_ai_choice()
