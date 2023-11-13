@@ -4,7 +4,7 @@ ROCK, PAPER, SCISSORS = 1, 2, 3
 
 def get_player_choice():
     while True:
-        player = int(input("Enter choice (1: Rock, 2: Paper, 3: Scissors): "))
+        player = int(input("Enter choice: "))
         if player in [ROCK, PAPER, SCISSORS]:
             print(f"Player -> {'Rock' if player == ROCK else 'Paper' if player == PAPER else 'Scissors'}")
             return player
