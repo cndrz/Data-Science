@@ -18,7 +18,12 @@ PLAYER_SPD = 5
 window = pygame.display.set_mode((WIDTH, HEIGHT))
 
 def get_bg():
-    
+    for x in x:
+        print("wow")
+
+
+
+
 def main(window):
 
     clock = pygame.time.Clock()
