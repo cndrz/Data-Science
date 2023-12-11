@@ -10,10 +10,10 @@ class account:
     
     def file(x):
         with open("Account Details.csv", "a", newline = "") as account_file:
-            writer = csv.writer(account_file)
+            writer = csv.writer(account_file, quoting = csv.QUOTE_NONE, escapechar = " ")
             writer.writerow([f"Account Name: {x.name}"])
             writer.writerow([f"Account Email: {x.email}"])
-            writer.writerow([f"Account Password: {x.password}"])
+            writer.writerow([f"Account Password: {x.password}\n"])
 
     def sign_up(x):
 
