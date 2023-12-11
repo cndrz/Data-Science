@@ -34,7 +34,6 @@ class account:
         print(f"Name: {x.name}")
         print(f"Email: {x.email}")
         print(f"Password: {x.password}")
-        print("Your Quote For Today - 'Be Like Water' ")
 
 user_account = account()
 user_account.sign_up()
