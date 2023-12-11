@@ -1,10 +1,19 @@
+import csv
 class account:
+
     
     def __init__(x):
 
         x.name = None
         x.email = None
         x.password = None
+    
+    def file(x):
+        with open("Account Details.csv", "a", newline = "") as account_file:
+            writer = csv.writer(account_file)
+            writer.writerow([f"Account Name: {x.name}"])
+            writer.writerow([f"Account Email: {x.email}"])
+            writer.writerow([f"Account Password: {x.password}"])
 
     def sign_up(x):
 
@@ -30,6 +39,7 @@ class account:
 user_account = account()
 user_account.sign_up()
 user_account.account_details()
+user_account.file()
 
          
 
