@@ -9,11 +9,13 @@ class account:
         x.password = None
     
     def file(x):
+
         with open("Account Details.csv", "a", newline = "") as account_file:
-            writer = csv.writer(account_file, quoting = csv.QUOTE_NONE, escapechar = " ")
+            writer = csv.writer(account_file)
             writer.writerow([f"Account Name: {x.name}"])
             writer.writerow([f"Account Email: {x.email}"])
-            writer.writerow([f"Account Password: {x.password}\n"])
+            writer.writerow([f"Account Password: {x.password}"])
+            writer.writerow(" ")
 
     def sign_up(x):
 
