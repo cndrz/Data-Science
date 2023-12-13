@@ -1,4 +1,5 @@
 import csv
+import getpass
 class account:
 
     
@@ -27,7 +28,7 @@ class account:
         if "@" not in x.email or "." not in x.email:
             return "Invalid Email Format. Sign-up Failed."
 
-        x.password = input("Enter Password: ")
+        x.password = getpass.getpass("Enter Password: ")
         if len(x.password) < 10:
             return "Password should be at least 10 Characters. Sign-up Failed."
         
