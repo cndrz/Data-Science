@@ -40,7 +40,7 @@ class account:
 
 user_account = account()
 user_account.sign_up()
-user_account.account_details()
+user_account.account_details
 user_account.file()
 
          

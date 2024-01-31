@@ -21,12 +21,11 @@ class student_sign_in:
             return "Your Student Number Should Not Contain Any Letter. Sign-in Failed."
 
     def file(x):
-
-        with open("Student Logbook", "a", newline = "") as student_file:
+        with open("Student Logbook.csv", "a", newline="") as student_file:
             w = csv.writer(student_file)
-            w.writerow(f"Student Name: {x.student_name}")
-            w.writerow(f"Student Number: {x.student_number}")
-            w.writerow(" ")
+            w.writerow(["Student Name:" + "".join(x.student_name)])
+            w.writerow(["Student Number:" + "".join(str(x.student_number))])
+            w.writerow([])
     
 
 student = student_sign_in()
