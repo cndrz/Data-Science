@@ -1,8 +1,5 @@
-import os
-from tkinter import *
 import csv
 from datetime import datetime
-
 
 class logbook:
 
@@ -42,7 +39,6 @@ class logbook:
 
             except ValueError as error:
                 print(error)
-
 
 log = logbook()
 log.login()
