@@ -14,6 +14,7 @@ WIDTH, HEIGHT = GRID_SIZE * CELL_SIZE, GRID_SIZE * CELL_SIZE
 WHITE = (255, 255, 255)
 RED = (255, 0, 0)
 
+
 # Define the Snake class
 class Snake:
     def __init__(self):
@@ -22,10 +23,17 @@ class Snake:
 
     def draw(self):
         for segment in self.body:
-            pygame.draw.rect(screen, WHITE, (segment[0] * CELL_SIZE, segment[1] * CELL_SIZE, CELL_SIZE, CELL_SIZE))
+            pygame.draw.rect(
+                screen,
+                WHITE,
+                (segment[0] * CELL_SIZE, segment[1] * CELL_SIZE, CELL_SIZE, CELL_SIZE),
+            )
 
     def move(self):
-        new_head = (self.body[0][0] + self.direction[0], self.body[0][1] + self.direction[1])
+        new_head = (
+            self.body[0][0] + self.direction[0],
+            self.body[0][1] + self.direction[1],
+        )
         self.body.insert(0, new_head)
 
     def check_collision(self):
@@ -50,6 +58,7 @@ class Snake:
 
         return False
 
+
 # Define the Food class
 class Food:
     def __init__(self):
@@ -57,10 +66,23 @@ class Food:
         self.spawn_food()
 
     def draw(self):
-        pygame.draw.rect(screen, RED, (self.position[0] * CELL_SIZE, self.position[1] * CELL_SIZE, CELL_SIZE, CELL_SIZE))
+        pygame.draw.rect(
+            screen,
+            RED,
+            (
+                self.position[0] * CELL_SIZE,
+                self.position[1] * CELL_SIZE,
+                CELL_SIZE,
+                CELL_SIZE,
+            ),
+        )
 
     def spawn_food(self):
-        self.position = (random.randint(0, GRID_SIZE - 1), random.randint(0, GRID_SIZE - 1))
+        self.position = (
+            random.randint(0, GRID_SIZE - 1),
+            random.randint(0, GRID_SIZE - 1),
+        )
+
 
 # Set up the game window
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -81,11 +103,20 @@ while running:
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_w and snake.direction != (0, 1):  # "W" key for up
                 snake.direction = (0, -1)  # Move up
-            elif event.key == pygame.K_s and snake.direction != (0, -1):  # "S" key for down
+            elif event.key == pygame.K_s and snake.direction != (
+                0,
+                -1,
+            ):  # "S" key for down
                 snake.direction = (0, 1)  # Move down
-            elif event.key == pygame.K_a and snake.direction != (1, 0):  # "A" key for left
+            elif event.key == pygame.K_a and snake.direction != (
+                1,
+                0,
+            ):  # "A" key for left
                 snake.direction = (-1, 0)  # Move left
-            elif event.key == pygame.K_d and snake.direction != (-1, 0):  # "D" key for right
+            elif event.key == pygame.K_d and snake.direction != (
+                -1,
+                0,
+            ):  # "D" key for right
                 snake.direction = (1, 0)  # Move right
 
     # Update the game state
