@@ -1,6 +1,7 @@
 import csv
 from datetime import datetime
 
+
 class logbook:
 
     def __init__(x):
@@ -39,6 +40,7 @@ class logbook:
 
             except ValueError as error:
                 print(error)
+
 
 log = logbook()
 log.login()
