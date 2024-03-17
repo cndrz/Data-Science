@@ -9,8 +9,5 @@ class Student:
         self.student_number = None
 
     def student_logs():
+
         pass
-
-
-        
-
