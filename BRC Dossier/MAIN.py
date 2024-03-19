@@ -1,9 +1,9 @@
 def main_menu():
 
-    import BRC_sectors
-    import BRC_Oops
-    import BRC_awes
-    import BRC_Dinfo
+    import SECTORS
+    import OOPS
+    import AWES
+    import INFO
 
     print("--- Welcome to the BRC Dossier ---")
     print("A. BRC Sectors")
@@ -17,26 +17,26 @@ def main_menu():
             
             match choice:
                 case "A":
-                    BRC_sectors.sector_select()
+                    SECTORS.sector_select()
                     break
 
                 case "B":
-                    BRC_Oops.Oops_select()
+                    OOPS.Oops_select()
                     break
 
                 case "C":
-                    BRC_awes.awes_select()
+                    AWES.awes_select()
                     break
                 
                 case "D":
-                    BRC_Dinfo.dossier_info()
+                    INFO.dossier_info()
                     break
 
                 case _:
                     print("Invalid choice. Please enter a valid option (A, B, C, D)")
 
-        except Exception as e:
-            print(f"An error occurred: {e}. Please try again.")
+        except Exception as x:
+            print(f"An error occurred: {x}. Please try again.")
 
 
 main_menu()
