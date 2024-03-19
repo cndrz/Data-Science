@@ -11,7 +11,7 @@ def Oops_select():
     print("I. The X-Ray Light Box")
     print("J. The Ashtray and Cigarette")
 
-    oops_input = input("Choose one: ")
+    oops_input = input("Enter your choice: ")
 
     match oops_input:
    

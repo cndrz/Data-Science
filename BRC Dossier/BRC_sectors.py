@@ -6,7 +6,7 @@ def sector_select():
     print("D. Maintenance Sector")
     print("E. Research Sector")
 
-    sector_input = input("Choose one: ")
+    sector_input = input("Enter your choice: ")
 
     match sector_input:
    
