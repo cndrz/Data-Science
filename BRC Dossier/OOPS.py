@@ -11,50 +11,86 @@ def Oops_select():
     print("I. The X-Ray Light Box")
     print("J. The Ashtray and Cigarette")
 
-    oops_input = input("Enter your choice: ")
+    A = 
+    B = 
+    C = 
+    D = 
+    E = 
+    F = 
+    G = 
+    H = 
+    I = 
+    J = 
 
-    match oops_input:
-   
-        case "A":
-            # Read file
-            pass
-        
-        case "B":
-            # Read file
-            pass
+    while True:
+        try:
+
+            choice = input("Enter your choice: ")
             
-        case "C":
-            # Read file
-            pass
+            match choice:
+                case "A":
+                     with open(A, "r") as Service_Weapon:
+                        file_1 = Service_Weapon.read()
+                        print(file_1)
+                        break
 
-        case "D":
-            # Read file
-            pass
+                case "B":
+                     with open(B, "r") as Hotline:
+                        file_2 = Hotline.read()
+                        print(file_2)
+                        break
 
-        case "E"  : 
-            # Read file
-            pass
+                case "C":
+                     with open(C, "r") as Floppy_Disk:
+                        file_3 = Floppy_Disk.read()
+                        print(file_3)
+                        break
+                
+                case "D":
+                     with open(D, "r") as Home_Safe:
+                        file_4 = Home_Safe.read()
+                        print(file_4)
+                        break
 
-        case "F":
-            # Read file
-            pass
-        
-        case "G":
-            # Read file
-            pass
-            
-        case "H":
-            # Read file
-            pass
+                case "E":
+                     with open(E, "r") as Benicoff_TV:
+                        file_5 = Benicoff_TV.read()
+                        print(file_5)
+                        break
+                     
+                case "F":
+                     with open(F, "r") as Horse:
+                        file_6 = Horse.read()
+                        print(file_6)
+                        break
+                     
+                case "G":
+                     with open(G, "r") as Slide_Projector:
+                        file_7 = Slide_Projector.read()
+                        print(file_7)
+                        break
 
-        case "I":
-            # Read file
-            pass
+                case "H":
+                     with open(H, "r") as Jukebox:
+                        file_8 = Jukebox.read()
+                        print(file_8)
+                        break    
+                     
+                case "I":
+                     with open(I, "r") as X_Ray:
+                        file_9 = X_Ray.read()
+                        print(file_9)
+                        break
 
-        case "J"  : 
-            # Read file
-            pass
+                case "J":
+                     with open(J, "r") as Ash_Cig:
+                        file_10 = Ash_Cig.read()
+                        print(file_10)
+                        break 
+                    
 
-        case _:
-            # Re-entry input
-            pass
+                case _:
+                    print("Invalid choice. Please enter a valid option (A, B, C, D, E)")
+
+        except Exception as x:
+            print(f"An error occurred: {x}. Please try again.")
