@@ -11,16 +11,16 @@ def Oops_select():
     print("I. The X-Ray Light Box")
     print("J. The Ashtray and Cigarette")
 
-    A = 
-    B = 
-    C = 
-    D = 
-    E = 
-    F = 
-    G = 
-    H = 
-    I = 
-    J = 
+    A = r"C:\Users\admin\Desktop\Python\BRC Dossier\Objects of Power\The Service Weapon.txt"
+    B = r"C:\Users\admin\Desktop\Python\BRC Dossier\Objects of Power\The Hotline.txt"
+    C = r"C:\Users\admin\Desktop\Python\BRC Dossier\Objects of Power\The Floppy Disk.txt"
+    D = r"C:\Users\admin\Desktop\Python\BRC Dossier\Objects of Power\The Home Safe.txt"
+    E = r"C:\Users\admin\Desktop\Python\BRC Dossier\Objects of Power\The Benicoff TV.txt"
+    F = r"C:\Users\admin\Desktop\Python\BRC Dossier\Objects of Power\The Merry-Go-Round Horse.txt"
+    G = r"C:\Users\admin\Desktop\Python\BRC Dossier\Objects of Power\The Slide Projector.txt"
+    H = r"C:\Users\admin\Desktop\Python\BRC Dossier\Objects of Power\The Songmaster Jukebox.txt"
+    I = r"C:\Users\admin\Desktop\Python\BRC Dossier\Objects of Power\The X-Ray Light Box.txt"
+    J = r"C:\Users\admin\Desktop\Python\BRC Dossier\Objects of Power\The Ashtray and Cigarette.txt"
 
     while True:
         try:
