@@ -17,42 +17,42 @@ def select_section():
             case "A":
 
                 try:
-                    mailing_module = importlib.import_module("MAILING")
-                    mailing_module.mailing()
+                    module = importlib.import_module("FUNCTIONS")
+                    module.mailing()
 
                 except ImportError:
-                    print("Error: The MAILING.py file could not be found.")
+                    print("Error: The FUNCTIONS.py file could not be found.")
 
                 except AttributeError:
-                    print("Error: The MAILING.py file does not contain a mailing() function.")
+                    print("Error: The FUNCTIONS.py file does not contain a mailing() function.")
 
                 break
 
             case "B":
 
                 try:
-                    delivery_module = importlib.import_module("DELIVERY")
-                    delivery_module.delivery()
+                    module = importlib.import_module("FUNCTIONS")
+                    module.delivery()
 
                 except ImportError:
-                    print("Error: The DELIVERY.py file could not be found.")
+                    print("Error: The FUNCTIONS.py file could not be found.")
 
                 except AttributeError:
-                    print("Error: The DELIVERY.py file does not contain a delivery() function.")
+                    print("Error: The FUNCTIONS.py file does not contain a delivery() function.")
 
                 break
 
             case "C":
 
                 try:
-                    css_module = importlib.import_module("CSS")
-                    css_module.css()
+                    module = importlib.import_module("FUNCTIONS")
+                    module.css()
 
                 except ImportError:
-                    print("Error: The CSS.py file could not be found.")
+                    print("Error: The FUNCTIONS.py file could not be found.")
 
                 except AttributeError:
-                    print("Error: The CSS.py file does not contain a css() function.")
+                    print("Error: The FUNCTIONS.py file does not contain a css() function.")
 
                 break
 
