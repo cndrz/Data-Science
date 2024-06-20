@@ -1,5 +1,21 @@
 import importlib
 
+def handle_section(section_name, function_name):
+
+    try:
+
+        module = importlib.import_module("FUNCTIONS")
+        func = getattr(module, function_name)
+        func()
+
+    except ImportError:
+
+        print("Error: The FUNCTIONS.py file could not be found.")
+
+    except AttributeError:
+        
+        print(f"Error: The FUNCTIONS.py file does not contain a {function_name} function.")
+
 def select_section():
 
     print("Welcome To XXX Mailing Company")
@@ -9,56 +25,24 @@ def select_section():
     print("C. Customer Service Sect.")
 
     while True:
-
         user_input = input("--> ").upper()
 
         match user_input:
-
             case "A":
 
-                try:
-                    module = importlib.import_module("FUNCTIONS")
-                    module.mailing()
-
-                except ImportError:
-                    print("Error: The FUNCTIONS.py file could not be found.")
-
-                except AttributeError:
-                    print("Error: The FUNCTIONS.py file does not contain a mailing() function.")
-
+                handle_section("Mail Sorting", "mailing")
                 break
 
             case "B":
 
-                try:
-                    module = importlib.import_module("FUNCTIONS")
-                    module.delivery()
-
-                except ImportError:
-                    print("Error: The FUNCTIONS.py file could not be found.")
-
-                except AttributeError:
-                    print("Error: The FUNCTIONS.py file does not contain a delivery() function.")
-
+                handle_section("Delivery", "delivery")
                 break
 
             case "C":
-
-                try:
-                    module = importlib.import_module("FUNCTIONS")
-                    module.css()
-
-                except ImportError:
-                    print("Error: The FUNCTIONS.py file could not be found.")
-
-                except AttributeError:
-                    print("Error: The FUNCTIONS.py file does not contain a css() function.")
-
+                handle_section("Customer Service", "css")
                 break
-
             case _:
 
                 print("Invalid selection. Please choose A, B, or C.")
-
 
 select_section()

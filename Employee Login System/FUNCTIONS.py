@@ -1,8 +1,21 @@
+import mysql.connector
+
 def mailing():
-    pass
+        
+        first_name = input("Enter Employee First Name: ")
+        last_name = input("Enter Employee Last Name: ")
+        id = int(input("Enter Employee ID: "))
+        
+
 
 def delivery():
-    pass
+
+        first_name = input("Enter Employee First Name: ")
+        last_name = input("Enter Employee Last Name: ")
+        id = int(input("Enter Employee ID: "))
 
 def css():
-    pass
+        
+        first_name = input("Enter Employee First Name: ")
+        last_name = input("Enter Employee Last Name: ")
+        id = int(input("Enter Employee ID: "))
