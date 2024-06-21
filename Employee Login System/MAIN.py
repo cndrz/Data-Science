@@ -1,22 +1,22 @@
 import importlib
 
-def handle_section(section_name, function_name):
+def handle_section(function_name):
 
     try:
 
         module = importlib.import_module("FUNCTIONS")
-        func = getattr(module, function_name)
-        func()
+        function = getattr(module, function_name)
+        function()
 
     except ImportError:
 
         print("Error: The FUNCTIONS.py file could not be found.")
 
     except AttributeError:
-        
-        print(f"Error: The FUNCTIONS.py file does not contain a {function_name} function.")
 
-def select_section():
+        print(f"Error: The FUNCTIONS.py file does not contain a function named '{function_name}'.")
+
+def display_menu():
 
     print("Welcome To XXX Mailing Company")
     print("Select Your Designated Section")
@@ -24,25 +24,34 @@ def select_section():
     print("B. Delivery Sect.")
     print("C. Customer Service Sect.")
 
+def select_section():
+
+    display_menu()
+    
     while True:
+
         user_input = input("--> ").upper()
 
-        match user_input:
-            case "A":
+        if user_input in ['A', 'B', 'C']:
+            
+            break
 
-                handle_section("Mail Sorting", "mailing")
-                break
+        else:
 
-            case "B":
+            print("Invalid selection. Please choose A, B, or C.")
 
-                handle_section("Delivery", "delivery")
-                break
+    if user_input == "A":
 
-            case "C":
-                handle_section("Customer Service", "css")
-                break
-            case _:
+        handle_section("mailing")
 
-                print("Invalid selection. Please choose A, B, or C.")
+    elif user_input == "B":
 
-select_section()
+        handle_section("delivery")
+
+    elif user_input == "C":
+
+        handle_section("css")
+
+if __name__ == "__main__":
+
+    select_section()
