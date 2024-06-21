@@ -7,7 +7,7 @@ def mailing(conn):
     emp_id = int(input("Enter Employee ID: "))
 
     cursor = conn.cursor()
-    query = "SELECT * FROM employees WHERE first_name = %s AND last_name = %s AND id = %s"
+    query = "SELECT * FROM mailing_emp WHERE emp_firstname = %s AND emp_lastname = %s AND emp_id = %s"
     cursor.execute(query, (first_name, last_name, emp_id))
     result = cursor.fetchone()
 
@@ -23,7 +23,7 @@ def delivery(conn):
     emp_id = int(input("Enter Employee ID: "))
 
     cursor = conn.cursor()
-    query = "SELECT * FROM employees WHERE first_name = %s AND last_name = %s AND id = %s"
+    query = "SELECT * FROM delivery_emp WHERE emp_firstname = %s AND emp_lastname = %s AND emp_id = %s"
     cursor.execute(query, (first_name, last_name, emp_id))
     result = cursor.fetchone()
 
@@ -39,7 +39,7 @@ def css(conn):
     emp_id = int(input("Enter Employee ID: "))
 
     cursor = conn.cursor()
-    query = "SELECT * FROM employees WHERE first_name = %s AND last_name = %s AND id = %s"
+    query = "SELECT * FROM css_emp WHERE emp_firstname = %s AND emp_lastname = %s AND emp_id = %s"
     cursor.execute(query, (first_name, last_name, emp_id))
     result = cursor.fetchone()
 
