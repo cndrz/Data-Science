@@ -5,9 +5,9 @@ def insert_input(input_type, input_value):
     try:
         connection = mysql.connector.connect(
             host='localhost',
-            database='input_db',
+            database='number_letter',
             user='root ',
-            password='02200000329_DelaCruz'
+            password='---'
         )
 
         if connection.is_connected():
