@@ -7,7 +7,7 @@ def connect_to_database():
             host='localhost',
             database='fullname',
             user='root',
-            password='02200000329_DelaCruz'
+            password='---'
         )
         if connection.is_connected():
             return connection
