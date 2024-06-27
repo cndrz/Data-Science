@@ -5,7 +5,7 @@ def insert_input(input_type, input_value):
     try:
         connection = mysql.connector.connect(
             host='localhost',
-            database='number_letter',
+            database='input_db',
             user='root ',
             password='---'
         )
