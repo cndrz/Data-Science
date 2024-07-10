@@ -6,8 +6,8 @@ def insert_input(input_type, input_value):
         connection = mysql.connector.connect(
             host='localhost',
             database='input_db',
-            user='root ',
-            password='---'
+            user='root',
+            password='' # replace with root password
         )
 
         if connection.is_connected():
@@ -26,17 +26,43 @@ def insert_input(input_type, input_value):
             connection.close()
             print("MySQL connection is closed")
 
+def delete_input(input_id):
+    try:
+        connection = mysql.connector.connect(
+            host='localhost',
+            database='input_db',
+            user='root',
+            password='' # replace with root password
+        )
+
+        if connection.is_connected():
+            cursor = connection.cursor()
+            delete_query = """DELETE FROM user_inputs WHERE id = %s"""
+            cursor.execute(delete_query, (input_id,))
+            connection.commit()
+            print("Input successfully deleted from the database.")
+
+    except Error as e:
+        print(f"Error while connecting to MySQL: {e}")
+
+    finally:
+        if connection.is_connected():
+            cursor.close()
+            connection.close()
+            print("MySQL connection is closed")
+
 def question():
     while True:
         print("A = Numerical Input")
         print("B = Alphabetical Input")
+        print("C = Delete Input")
 
-        choice = input("Please enter your choice (A or B): ").strip().upper()
+        choice = input("Please enter your choice (A, B, or C): ").strip().upper()
 
         if choice == 'A':
             while True:
                 try:
-                    numerical = input("Enter The Numerical Value: ").strip()
+                    numerical = input("Enter the Numerical Value: ").strip()
                     if numerical == "":
                         raise ValueError
                     numerical = int(numerical)
@@ -44,7 +70,7 @@ def question():
                     insert_input('Numerical', numerical)
                     break
                 except ValueError:
-                    print("Only enter numerical values (e.g - 250, 1, 00). Whitespace is not allowed.")
+                    print("Only enter numerical values (e.g., 250, 1, 00). Whitespace is not allowed.")
         
         elif choice == 'B':
             while True:
@@ -54,10 +80,22 @@ def question():
                     insert_input('Alphabetical', alphabetical)
                     break
                 else:
-                    print("Only enter alphabetical values (e.g - abc, XYZ). Whitespace is not allowed.")
+                    print("Only enter alphabetical values (e.g., abc, XYZ). Whitespace is not allowed.")
+        
+        elif choice == 'C':
+            while True:
+                try:
+                    input_id = input("Enter the ID of the input to delete: ").strip()
+                    if input_id == "":
+                        raise ValueError
+                    input_id = int(input_id)
+                    delete_input(input_id)
+                    break
+                except ValueError:
+                    print("Only enter numerical IDs (e.g., 1, 2, 3). Whitespace is not allowed.")
         
         else:
-            print("Invalid input. Please enter 'A' or 'B'.")
+            print("Invalid input. Please enter 'A', 'B', or 'C'.")
             continue
 
         while True:
