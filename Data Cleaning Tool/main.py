@@ -18,9 +18,11 @@ def data_cleaning_tool(dataframe):
 
     return dataframe
 
-#Dataset
+# Sample Dataset
+# Changing Sample Dataset = Possibly Changing Dataframe Variable Parameters
 dataset = "https://raw.githubusercontent.com/mwaskom/seaborn-data/master/titanic.csv"
 dataframe = pd.read_csv(dataset)
 
 cleaned_dataframe = data_cleaning_tool(dataframe)
 print(cleaned_dataframe.head())
+
