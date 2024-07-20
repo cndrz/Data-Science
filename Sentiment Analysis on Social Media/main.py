@@ -50,7 +50,7 @@ print(news_dataframe.head())
 
 # Visualize the results
 plt.figure(figsize = (8, 6))
-sns.countplot(x ="Sentiment", hue = "Sentiment", data = news_dataframe, palette = "viridis", legend = False)
+sns.countplot(x = "Sentiment", hue = "Sentiment", data = news_dataframe, palette = "viridis", legend = False)
 plt.title("Sentiment Analysis of News Articles")
 plt.xlabel("Sentiment")
 plt.ylabel("Count")
