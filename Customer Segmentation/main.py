@@ -5,7 +5,7 @@ from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 
 # Load the sample dataset
-dataset = pd.read_csv("Customer Segmentation/customers.csv")
+dataset = pd.read_csv("customers.csv")
 
 # Display dataset basic information
 print(dataset.info())
@@ -19,7 +19,7 @@ dataset = dataset.dropna()
 # Display the cleaned data
 print(dataset.head())
 
-# Pairplot to visualize relationships
+# Pair plot to visualize relationships
 sns.pairplot(dataset)
 plt.show()
 
