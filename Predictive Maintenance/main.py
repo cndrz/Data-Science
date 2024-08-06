@@ -66,5 +66,3 @@ y_prob = rf_model.predict_proba(x_test)[:, 1]
 print(confusion_matrix(y_test, y_pred))
 print(classification_report(y_test, y_pred))
 print(f"ROC AUC Score: {roc_auc_score(y_test, y_prob)}")
-
-#
