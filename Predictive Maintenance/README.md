@@ -1,0 +1,2 @@
+The purpose of this program is to predict equipment failure or maintenance needs based on the dataset's historical data and various metrics.
+Libraries used : Pandas, Numpy, Sklearn, Matplotlib, Seaborn
