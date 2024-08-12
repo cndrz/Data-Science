@@ -1,0 +1,3 @@
+The Churn Prediction program aims to predict whether a customer is likely to leave a service (churn) or remain (retain) based on various factors like demographics, usage data, customer interactions, etc. This prediction helps businesses take proactive measures to retain customers, improving overall customer satisfaction and reducing churn rates.
+
+Libraries Used: Pandas, Numpy, Matplotlib, Seaborn, Scikit-Learn, XGBoost, Imbalanced-Learn, Joblib, Pickle
