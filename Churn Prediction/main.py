@@ -130,7 +130,6 @@ grid_search.fit(x_train, y_train)
 print(f"Best Parameters: {grid_search.best_params_}")
 print(f"Best score: {grid_search.best_score_}")
 
-
 # Optional - Save the model
 # joblib.dump(model, "Churn Prediction Model.pkl")
 
