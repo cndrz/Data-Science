@@ -54,7 +54,6 @@ plt.figure(figsize = (10, 6))
 sns.countplot(x = "gender_Male", hue = "Churn_Yes", data = dataset)
 plt.title("Churn by Gender")
 plt.show()
-
 # Example: Churn by contract type
 plt.figure(figsize = (12, 6))
 sns.countplot(x = "Contract_Two year", hue = "Churn_Yes", data = dataset)
