@@ -1,4 +1,4 @@
-import numpy as np
+import numpy as np 
 
 # Sample dataset: Monthly sales figures
 sales = [150, 111, 250, 245, 444]
