@@ -1,3 +1,3 @@
-This Python repository acts as a container of the programs that I have created using Python. 
-Feel free to explore the programs that I have made and put into this repository.
-Everything Python related programs is stored in this dedicated repository.
+This repository contains data science mini projects that I made in order to hone my skills in, well... data science.
+Feel free to explore the repository and download the projects I have made.
+
