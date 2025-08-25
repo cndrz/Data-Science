@@ -40,13 +40,13 @@ def get_sentiment(text):
         return "Neutral"
 
 # Fetch and clean news articles
-query = "Sex"
+query = "Philippines"
 news_dataframe = fetch_news(query, page_size = 100)
 news_dataframe["Cleaned Content"] = news_dataframe["Content"].apply(clean_text)
 
 # Apply sentiment analysis
 news_dataframe["Sentiment"] = news_dataframe["Cleaned Content"].apply(get_sentiment)
-print(news_dataframe.head())
+print(news_dataframe.head(10))
 
 # Visualize the results
 plt.figure(figsize = (8, 6))
