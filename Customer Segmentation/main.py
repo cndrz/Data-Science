@@ -5,7 +5,7 @@ from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 
 # Load the sample dataset
-dataset = pd.read_csv("customers.csv")
+dataset = pd.read_csv(r"C:\Users\admin\Desktop\Data-Science\Customer Segmentation\customers.csv")
 
 # Display dataset basic information
 print(dataset.info())

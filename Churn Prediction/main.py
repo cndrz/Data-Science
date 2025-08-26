@@ -11,7 +11,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import classification_report, confusion_matrix
 
 # Load the dataset
-dataset = pd.read_csv("Telco.csv")
+dataset = pd.read_csv(r"C:\Users\admin\Desktop\Data-Science\Churn Prediction\Telco.csv")
 
 # Display the first few rows of the dataset
 print(dataset.head())
