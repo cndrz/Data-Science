@@ -13,7 +13,7 @@ print(df.isnull().sum())
 
 df = df.drop_duplicates()
 df["Rating"] = df["Rating"].fillna(df["Rating"].mean())
-df.dropna(subset = ["Customer_Name"])
+df = df.dropna(subset = ["Customer_Name"])
 
 print("Cleaned DataFrame: ")
 print(df)
