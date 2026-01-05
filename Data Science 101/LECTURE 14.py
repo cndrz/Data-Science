@@ -1,5 +1,6 @@
-import pandas as pd 
+import pandas as pd
 from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error, r2_score
 
 grade_data = {
 
@@ -15,12 +16,16 @@ y = df["Grade"]
 x_train = x.iloc[0:4]
 y_train = y.iloc[0:4]
 x_test = x.iloc[4:6]
+y_test = y.iloc[4:6]
 
 model = LinearRegression()
 model.fit(x_train, y_train)
 
 y_pred = model.predict(x_test)
 
-print(f"Model Coefficient: {model.coef_}")
-print(f"Model Intercept: {model.intercept_}")
+mse = mean_squared_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
+
+print(f"Mean Squared Error: {mse}")
+print(f"R2 Score: {r2}")
 
