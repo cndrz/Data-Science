@@ -14,14 +14,22 @@ df = pd.read_csv(f"{path}/WA_Fn-UseC_-Telco-Customer-Churn.csv")
 
 print("Dataset Preview:")
 print(df.head())
+<<<<<<< HEAD
 print(f"\nShape: {df.shape}")
 print(f"Churn distribution:\n{df['Churn'].value_counts()}")
 
 df = df.drop("customerID", axis = 1)
+=======
+print(f"\nShape: {df.shape:}")
+print(f"Churn Distribution:\n{df["Churn"].value_counts()}")
+
+df = df.drop("customer_ID", axis = 1)
+>>>>>>> 188cae13c0fd795dbe4274db8960b55cc86edd55
 
 df["TotalCharges"] = pd.to_numeric(df["TotalCharges"], errors = "coerce")
 df = df.dropna()
 
+<<<<<<< HEAD
 df["Churn"] = (df["Churn"] == "Yes").astype(int)
 
 categorical_cols = df.select_dtypes(include = ["object"]).columns
@@ -171,3 +179,6 @@ print(classification_report(y_test, best_pred, target_names = ["Stay", "Churn"])
 ConfusionMatrixDisplay.from_predictions(y_test, best_pred, display_labels = ["Stay", "Churn"])
 plt.title(f"Best Model: {best_overall}\nAccuracy: {tuned_results[best_overall]:.3f}")
 plt.show()
+=======
+df["Churn"]
+>>>>>>> 188cae13c0fd795dbe4274db8960b55cc86edd55
